@@ -258,6 +258,78 @@
     .chart-main-price{font-size:28px}
     .chart-stats{grid-template-columns:1fr 1fr}
   }
+
+  /* ── Practice Trading ── */
+  .trade-panel{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:20px;position:relative;overflow:hidden;}
+  .trade-panel::before{content:'';position:absolute;top:-80px;right:-80px;width:240px;height:240px;background:radial-gradient(circle,rgba(16,217,134,0.05),transparent 70%);pointer-events:none;}
+  .trade-panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:10px;}
+  .trade-panel-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;display:flex;align-items:center;gap:10px;}
+  .trade-panel-subtitle{font-size:11px;font-weight:400;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+  .trade-paper-badge{font-size:10px;background:rgba(16,217,134,0.12);color:var(--green);border:1px solid rgba(16,217,134,0.25);border-radius:20px;padding:3px 10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;}
+  .trade-reset-btn{background:none;border:1px solid var(--border);border-radius:6px;padding:5px 12px;color:var(--muted);cursor:pointer;font-family:'Space Mono',monospace;font-size:10px;transition:all 0.2s;}
+  .trade-reset-btn:hover{color:var(--red);border-color:var(--red);}
+  .trade-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:22px;}
+  .trade-sum-item{background:var(--bg3);padding:14px 16px;}
+  .trade-sum-label{font-size:9px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+  .trade-sum-value{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;}
+  .trade-sum-value.profit{color:var(--green);}
+  .trade-sum-value.loss{color:var(--red);}
+  .trade-sum-sub{font-size:10px;color:var(--muted);margin-top:2px;}
+  .trade-body{display:grid;grid-template-columns:320px 1fr;gap:22px;align-items:start;}
+  .trade-form-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:20px;}
+  .trade-tabs{display:flex;gap:0;background:var(--bg2);border-radius:8px;padding:3px;margin-bottom:16px;}
+  .trade-tab{flex:1;background:none;border:none;color:var(--muted);cursor:pointer;padding:8px;border-radius:6px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;transition:all 0.2s;letter-spacing:1px;}
+  .trade-tab.buy.active{background:rgba(16,217,134,0.2);color:var(--green);}
+  .trade-tab.sell.active{background:rgba(255,69,96,0.2);color:var(--red);}
+  .trade-field{margin-bottom:12px;}
+  .trade-field-label{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;}
+  .trade-sel,.trade-inp{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-family:'Space Mono',monospace;font-size:12px;outline:none;transition:border-color 0.2s;}
+  .trade-sel:focus,.trade-inp:focus{border-color:var(--green);}
+  .trade-quick-btns{display:flex;gap:6px;margin-top:6px;}
+  .trade-quick-btn{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:5px;color:var(--muted);font-family:'Space Mono',monospace;font-size:10px;cursor:pointer;transition:all 0.2s;}
+  .trade-quick-btn:hover{border-color:var(--active);color:var(--active);}
+  .trade-preview-box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:14px;}
+  .trade-preview-row{display:flex;justify-content:space-between;padding:3px 0;font-size:11px;}
+  .trade-preview-label{color:var(--muted);}
+  .trade-preview-val{font-family:'Syne',sans-serif;font-weight:700;}
+  .trade-exec-btn{width:100%;border:none;border-radius:10px;padding:13px;font-family:'Syne',sans-serif;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:1px;transition:all 0.2s;}
+  .trade-exec-btn.is-buy{background:linear-gradient(135deg,#10d986,#00c97a);color:#000;}
+  .trade-exec-btn.is-sell{background:linear-gradient(135deg,#ff4560,#cc0028);color:#fff;}
+  .trade-exec-btn:hover{transform:translateY(-1px);opacity:0.9;}
+  .trade-exec-btn:disabled{opacity:0.4;cursor:not-allowed;transform:none;}
+  .trade-msg{margin-top:10px;font-size:11px;text-align:center;min-height:16px;}
+  .trade-msg.ok{color:var(--green);}
+  .trade-msg.err{color:var(--red);}
+  .trade-holdings-title{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+  .holding-item{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;margin-bottom:8px;transition:border-color 0.2s;}
+  .holding-item:hover{border-color:rgba(255,255,255,0.12);}
+  .holding-icon{font-size:22px;}
+  .holding-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;}
+  .holding-qty{font-size:10px;color:var(--muted);margin-top:2px;}
+  .holding-val{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;text-align:right;}
+  .holding-pnl{font-size:11px;margin-top:2px;text-align:right;}
+  .holding-pnl.up{color:var(--green);}
+  .holding-pnl.dn{color:var(--red);}
+  .holdings-empty{text-align:center;padding:28px 20px;color:var(--muted);font-size:12px;border:1px dashed var(--border);border-radius:10px;line-height:1.7;}
+  .trade-hist-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-top:14px;overflow:hidden;}
+  .trade-hist-header{padding:10px 16px;border-bottom:1px solid var(--border);font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;font-weight:700;}
+  .trade-hist-list{max-height:200px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
+  .trade-hist-item{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px solid var(--border);font-size:11px;gap:10px;}
+  .trade-hist-item:last-child{border-bottom:none;}
+  .trade-hist-side{font-family:'Syne',sans-serif;font-weight:800;font-size:10px;padding:2px 8px;border-radius:4px;flex-shrink:0;}
+  .trade-hist-side.buy{background:rgba(16,217,134,0.15);color:var(--green);}
+  .trade-hist-side.sell{background:rgba(255,69,96,0.15);color:var(--red);}
+  .trade-hist-info{color:var(--muted);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .trade-hist-amount{font-family:'Syne',sans-serif;font-weight:700;flex-shrink:0;}
+  .trade-gameover{display:none;position:absolute;inset:0;background:rgba(6,8,16,0.93);z-index:20;border-radius:16px;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:40px;backdrop-filter:blur(8px);}
+  .trade-gameover.show{display:flex;}
+  .trade-gameover-icon{font-size:60px;animation:tgShake 0.6s ease;}
+  @keyframes tgShake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+  .trade-gameover-title{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--red);}
+  .trade-gameover-sub{font-size:12px;color:var(--muted);line-height:1.8;max-width:340px;}
+  .trade-restart-btn{background:linear-gradient(135deg,var(--green),#00c97a);border:none;border-radius:12px;padding:14px 32px;color:#000;font-family:'Syne',sans-serif;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:1px;transition:all 0.2s;margin-top:6px;}
+  .trade-restart-btn:hover{transform:scale(1.04);}
+  @media(max-width:900px){.trade-body{grid-template-columns:1fr}.trade-summary{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -415,6 +487,79 @@
   </div>
 
 </div>
+
+  <!-- ═══ PRACTICE TRADING PANEL ═══ -->
+  <div class="trade-panel" id="tradePanel">
+    <!-- Game Over overlay -->
+    <div class="trade-gameover" id="tradeGameover">
+      <div class="trade-gameover-icon">💸</div>
+      <div class="trade-gameover-title">ACCOUNT LIQUIDATED</div>
+      <div class="trade-gameover-sub">You've lost everything. Every great trader has blown up at least once — it's how you learn the real lessons.</div>
+      <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">Peak portfolio: <span id="tgPeak" style="color:var(--text);font-weight:700">—</span></div>
+      <button class="trade-restart-btn" onclick="tradeRestart()">↺ Start Over with $10,000</button>
+    </div>
+
+    <div class="trade-panel-header">
+      <div class="trade-panel-title">📈 Practice Trading <span class="trade-panel-subtitle">Paper Money · Real Prices</span></div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="trade-paper-badge">PAPER TRADING</div>
+        <button class="trade-reset-btn" onclick="tradeRestart()">↺ Reset</button>
+      </div>
+    </div>
+
+    <div class="trade-summary">
+      <div class="trade-sum-item"><div class="trade-sum-label">Cash Balance</div><div class="trade-sum-value" id="tsCash">$10,000.00</div><div class="trade-sum-sub">Available</div></div>
+      <div class="trade-sum-item"><div class="trade-sum-label">Holdings Value</div><div class="trade-sum-value" id="tsHoldings">$0.00</div><div class="trade-sum-sub">At market</div></div>
+      <div class="trade-sum-item"><div class="trade-sum-label">Total Portfolio</div><div class="trade-sum-value" id="tsTotal">$10,000.00</div><div class="trade-sum-sub">Cash + Holdings</div></div>
+      <div class="trade-sum-item"><div class="trade-sum-label">Total P&amp;L</div><div class="trade-sum-value" id="tsPnl">$0.00</div><div class="trade-sum-sub" id="tsPnlPct">+0.00%</div></div>
+    </div>
+
+    <div class="trade-body">
+      <!-- Order form -->
+      <div class="trade-form-card">
+        <div class="trade-tabs">
+          <button class="trade-tab buy active" id="tTabBuy" onclick="tradeSetMode('buy')">▲ BUY</button>
+          <button class="trade-tab sell" id="tTabSell" onclick="tradeSetMode('sell')">▼ SELL</button>
+        </div>
+        <div class="trade-field">
+          <div class="trade-field-label">Coin</div>
+          <select class="trade-sel" id="tCoin" onchange="tradePreview()">
+            <option value="btc">₿ Bitcoin (BTC)</option>
+            <option value="eth">Ξ Ethereum (ETH)</option>
+            <option value="sol">◎ Solana (SOL)</option>
+            <option value="bnb">⬡ BNB (BNB)</option>
+          </select>
+        </div>
+        <div class="trade-field">
+          <div class="trade-field-label">Amount (USD $)</div>
+          <input class="trade-inp" type="number" id="tAmt" placeholder="Enter dollar amount" min="1" oninput="tradePreview()" />
+          <div class="trade-quick-btns">
+            <button class="trade-quick-btn" onclick="tradeQuick(0.25)">25%</button>
+            <button class="trade-quick-btn" onclick="tradeQuick(0.5)">50%</button>
+            <button class="trade-quick-btn" onclick="tradeQuick(0.75)">75%</button>
+            <button class="trade-quick-btn" onclick="tradeQuick(1)">MAX</button>
+          </div>
+        </div>
+        <div class="trade-preview-box">
+          <div class="trade-preview-row"><span class="trade-preview-label">Current Price</span><span class="trade-preview-val" id="tPrevPrice">—</span></div>
+          <div class="trade-preview-row"><span class="trade-preview-label">You Receive</span><span class="trade-preview-val" id="tPrevQty">—</span></div>
+          <div class="trade-preview-row"><span class="trade-preview-label">Order Total</span><span class="trade-preview-val" id="tPrevTotal">—</span></div>
+        </div>
+        <button class="trade-exec-btn is-buy" id="tExecBtn" onclick="tradeExecute()">▲ BUY NOW</button>
+        <div class="trade-msg" id="tMsg"></div>
+      </div>
+
+      <!-- Holdings + history -->
+      <div>
+        <div class="trade-holdings-title">My Holdings</div>
+        <div id="tHoldings"><div class="holdings-empty">💼 No positions yet.<br>Buy your first coin to get started!</div></div>
+        <div class="trade-hist-box">
+          <div class="trade-hist-header">Trade History</div>
+          <div class="trade-hist-list" id="tHistory"><div style="color:var(--muted);font-size:11px;text-align:center;padding:14px">No trades yet</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- AI Chat Panel -->
 <div class="chat-panel" id="chatPanel">
@@ -879,6 +1024,168 @@ async function init(){
 }
 
 document.getElementById('addAlertBtn').addEventListener('click',addAlert);
+
+// ── Practice Trading ──────────────────────────────────────────────────────────
+const TRADE_KEY='cto_trade_v1';
+const TRADE_START=10000;
+let tMode='buy';
+let tState=tradeLoad();
+
+function tradeLoad(){
+  try{const s=localStorage.getItem(TRADE_KEY);if(s)return JSON.parse(s);}catch(e){}
+  return{cash:TRADE_START,holdings:{},history:[],peak:TRADE_START};
+}
+function tradeSave(){localStorage.setItem(TRADE_KEY,JSON.stringify(tState));}
+function tradeRestart(){
+  tState={cash:TRADE_START,holdings:{},history:[],peak:TRADE_START};
+  tradeSave();
+  document.getElementById('tradeGameover').classList.remove('show');
+  document.getElementById('tAmt').value='';
+  document.getElementById('tMsg').textContent='';
+  document.getElementById('tMsg').className='trade-msg';
+  tradeRender();
+}
+function tradeSetMode(m){
+  tMode=m;
+  document.getElementById('tTabBuy').classList.toggle('active',m==='buy');
+  document.getElementById('tTabSell').classList.toggle('active',m==='sell');
+  const btn=document.getElementById('tExecBtn');
+  btn.className='trade-exec-btn '+(m==='buy'?'is-buy':'is-sell');
+  btn.textContent=m==='buy'?'▲ BUY NOW':'▼ SELL NOW';
+  document.getElementById('tAmt').value='';
+  tradePreview();
+}
+function tradeQuick(pct){
+  const coin=document.getElementById('tCoin').value;
+  let max=0;
+  if(tMode==='buy'){
+    max=tState.cash;
+  }else{
+    const h=tState.holdings[coin];
+    if(!h||h.qty<=0){tradeMsgShow('No '+coin.toUpperCase()+' to sell','err');return;}
+    const price=allCoinData[coin]?.current_price||0;
+    max=h.qty*price;
+  }
+  document.getElementById('tAmt').value=(max*pct).toFixed(2);
+  tradePreview();
+}
+function tradePreview(){
+  const coin=document.getElementById('tCoin').value;
+  const amt=parseFloat(document.getElementById('tAmt').value)||0;
+  const price=allCoinData[coin]?.current_price||0;
+  const qty=price>0?amt/price:0;
+  document.getElementById('tPrevPrice').textContent=price>0?fmt.price(price):'Waiting...';
+  document.getElementById('tPrevQty').textContent=qty>0?qty.toFixed(6)+' '+coin.toUpperCase():'—';
+  document.getElementById('tPrevTotal').textContent=amt>0?'$'+amt.toFixed(2):'—';
+}
+function tradeExecute(){
+  const coin=document.getElementById('tCoin').value;
+  const amt=parseFloat(document.getElementById('tAmt').value);
+  const price=allCoinData[coin]?.current_price;
+  if(!amt||amt<=0){tradeMsgShow('Enter a valid amount','err');return;}
+  if(!price||price<=0){tradeMsgShow('Price not available yet','err');return;}
+  const qty=amt/price;
+  if(tMode==='buy'){
+    if(amt>tState.cash+0.001){tradeMsgShow('Not enough cash (have $'+tState.cash.toFixed(2)+')','err');return;}
+    tState.cash-=amt;
+    if(!tState.holdings[coin])tState.holdings[coin]={qty:0,avgCost:0,invested:0};
+    const h=tState.holdings[coin];
+    h.invested+=amt;
+    h.qty+=qty;
+    h.avgCost=h.invested/h.qty;
+    tradeMsgShow('✓ Bought '+qty.toFixed(6)+' '+coin.toUpperCase()+' @ '+fmt.price(price),'ok');
+  }else{
+    const h=tState.holdings[coin];
+    if(!h||h.qty<0.0000001){tradeMsgShow('No '+coin.toUpperCase()+' holdings to sell','err');return;}
+    const maxSell=h.qty*price;
+    if(amt>maxSell+0.01){tradeMsgShow('Max sell: $'+maxSell.toFixed(2),'err');return;}
+    const sellQty=amt/price;
+    const costBasis=sellQty*h.avgCost;
+    const pnl=amt-costBasis;
+    tState.cash+=amt;
+    h.qty-=sellQty;
+    h.invested-=costBasis;
+    if(h.qty<0.0000001)delete tState.holdings[coin];
+    const pnlStr=(pnl>=0?'+$':'-$')+Math.abs(pnl).toFixed(2);
+    tradeMsgShow('✓ Sold '+sellQty.toFixed(6)+' '+coin.toUpperCase()+' · Realized P&L: '+pnlStr,'ok');
+  }
+  tState.history.unshift({side:tMode,coin,qty,price,amt,time:Date.now()});
+  if(tState.history.length>50)tState.history.pop();
+  document.getElementById('tAmt').value='';
+  tradeSave();
+  tradeRender();
+  tradeCheckGameover();
+}
+function tradeMsgShow(text,cls){
+  const el=document.getElementById('tMsg');
+  el.textContent=text;el.className='trade-msg '+cls;
+  if(text)setTimeout(()=>{el.textContent='';el.className='trade-msg';},4000);
+}
+function tradeHoldingsValue(){
+  let total=0;
+  for(const [coin,h] of Object.entries(tState.holdings)){
+    const price=allCoinData[coin]?.current_price||0;
+    total+=h.qty*price;
+  }
+  return total;
+}
+function tradeRender(){
+  const hv=tradeHoldingsValue();
+  const total=tState.cash+hv;
+  const pnl=total-TRADE_START;
+  const pnlPct=(pnl/TRADE_START)*100;
+  if(total>tState.peak){tState.peak=total;tradeSave();}
+  // Summary
+  document.getElementById('tsCash').textContent='$'+tState.cash.toFixed(2);
+  document.getElementById('tsHoldings').textContent='$'+hv.toFixed(2);
+  const tEl=document.getElementById('tsTotal');
+  tEl.textContent='$'+total.toFixed(2);
+  tEl.className='trade-sum-value'+(total>TRADE_START?' profit':total<TRADE_START?' loss':'');
+  const pEl=document.getElementById('tsPnl');
+  pEl.textContent=(pnl>=0?'+$':'-$')+Math.abs(pnl).toFixed(2);
+  pEl.className='trade-sum-value'+(pnl>0?' profit':pnl<0?' loss':'');
+  document.getElementById('tsPnlPct').textContent=(pnlPct>=0?'+':'')+pnlPct.toFixed(2)+'%';
+  // Holdings
+  const CMETA={btc:{icon:'₿',name:'Bitcoin'},eth:{icon:'Ξ',name:'Ethereum'},sol:{icon:'◎',name:'Solana'},bnb:{icon:'⬡',name:'BNB'}};
+  const hEl=document.getElementById('tHoldings');
+  const coins=Object.keys(tState.holdings);
+  if(!coins.length){
+    hEl.innerHTML='<div class="holdings-empty">💼 No positions yet.<br>Buy your first coin to get started!</div>';
+  }else{
+    hEl.innerHTML=coins.map(coin=>{
+      const h=tState.holdings[coin];
+      const price=allCoinData[coin]?.current_price||0;
+      const val=h.qty*price;
+      const unr=val-(h.qty*h.avgCost);
+      const unrPct=h.avgCost>0?(unr/(h.qty*h.avgCost))*100:0;
+      const m=CMETA[coin]||{icon:'●',name:coin.toUpperCase()};
+      return`<div class="holding-item"><div class="holding-icon">${m.icon}</div><div><div class="holding-name">${m.name}</div><div class="holding-qty">${h.qty.toFixed(6)} ${coin.toUpperCase()} · Avg ${fmt.price(h.avgCost)}</div></div><div><div class="holding-val">$${val.toFixed(2)}</div><div class="holding-pnl ${unr>=0?'up':'dn'}">${unr>=0?'+':'-'}$${Math.abs(unr).toFixed(2)} (${unrPct>=0?'+':''}${unrPct.toFixed(2)}%)</div></div></div>`;
+    }).join('');
+  }
+  // History
+  const hist=document.getElementById('tHistory');
+  if(!tState.history.length){
+    hist.innerHTML='<div style="color:var(--muted);font-size:11px;text-align:center;padding:14px">No trades yet</div>';
+  }else{
+    hist.innerHTML=tState.history.slice(0,25).map(t=>{
+      const d=new Date(t.time).toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+      return`<div class="trade-hist-item"><span class="trade-hist-side ${t.side}">${t.side.toUpperCase()}</span><span class="trade-hist-info">${t.coin.toUpperCase()} · ${t.qty.toFixed(5)} @ ${fmt.price(t.price)}</span><span style="color:var(--muted);font-size:10px;flex-shrink:0">${d}</span><span class="trade-hist-amount">$${t.amt.toFixed(2)}</span></div>`;
+    }).join('');
+  }
+  tradePreview();
+}
+function tradeCheckGameover(){
+  const hv=tradeHoldingsValue();
+  const total=tState.cash+hv;
+  if(total<0.50&&Object.keys(tState.holdings).length===0){
+    document.getElementById('tgPeak').textContent='$'+(tState.peak||0).toFixed(2);
+    document.getElementById('tradeGameover').classList.add('show');
+  }
+}
+
+// Refresh trading UI whenever prices update (safe interval approach)
+setInterval(function(){if(Object.keys(allCoinData).length>0)tradeRender();},4000);
+
 init();
 </script>
 </body>
